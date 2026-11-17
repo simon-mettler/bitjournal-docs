@@ -1,0 +1,243 @@
+.notice {
+  background: color-mix(in srgb, var(--color-primary) 12%, var(--color-surface));
+  border-bottom: 1px solid color-mix(in srgb, var(--color-primary) 25%, transparent);
+}
+
+.noticeInner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+}
+
+.badge {
+  padding: 2px 10px;
+  border-radius: var(--radius-xl);
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.noticeText {
+  margin: 0;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 5rem 0 0;
+  text-align: center;
+  background:
+    radial-gradient(
+      60rem 28rem at 50% -10%,
+      color-mix(in srgb, var(--color-primary) 22%, transparent),
+      transparent 70%
+    );
+}
+
+.heroInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo {
+  height: 4.5rem;
+  max-width: 100%;
+  margin-bottom: 2rem;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+.accent {
+  color: var(--color-primary);
+}
+
+.subtitle {
+  max-width: 38rem;
+  margin: 1.5rem 0 0;
+  font-size: 1.25rem;
+  color: var(--color-text-light);
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 2rem;
+}
+
+/* Screenshot fan: three phones, the middle one raised */
+.shots {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 2rem;
+  width: 100%;
+  /* Padding gives the shadows/glow room, since the mask clips overflow */
+  padding: 4rem 4rem 0;
+  margin-top: 1rem;
+  /* Bottom of the phones fades out into the page */
+  -webkit-mask-image: linear-gradient(to bottom, #000 70%, transparent);
+  mask-image: linear-gradient(to bottom, #000 70%, transparent);
+}
+
+.shot {
+  display: block;
+  width: min(300px, 28vw);
+  height: auto;
+  border-radius: var(--radius-lg);
+  border: 1px solid color-mix(in srgb, var(--color-primary) 70%, transparent);
+  box-shadow:
+    0 2px 6px rgba(0, 0, 0, 0.12),
+    0 18px 40px rgba(0, 0, 0, 0.28);
+}
+
+[data-theme="dark"] .shot {
+  border-color: var(--ifm-color-primary-lighter);
+  box-shadow:
+    0 0 24px color-mix(in srgb, var(--ifm-color-primary-lighter) 10%, transparent),
+    0 0 70px color-mix(in srgb, var(--ifm-color-primary-light) 5%, transparent);
+}
+
+.shotCenter {
+  position: relative;
+  z-index: 1;
+  width: min(340px, 32vw);
+  margin-bottom: -2rem;
+}
+
+.shotSide {
+  margin-bottom: -4rem;
+}
+
+.section {
+  padding: 5rem 0;
+}
+
+.sectionMuted {
+  background: var(--color-surface-muted);
+}
+
+.sectionTitle {
+  margin: 0;
+  text-align: center;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  letter-spacing: -0.02em;
+}
+
+.sectionSub {
+  margin: 0.5rem 0 3rem;
+  text-align: center;
+  color: var(--color-text-light);
+  font-size: 1.125rem;
+}
+
+.featureGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  padding: 1.75rem;
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.cardTitle {
+  margin: 0 0 0.25rem;
+  font-size: 1.25rem;
+}
+
+.cardLead {
+  margin: 0 0 0.75rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.cardText {
+  margin: 0;
+  color: var(--color-text-light);
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.step {
+  text-align: left;
+}
+
+.stepNumber {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-bottom: 1rem;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: #fff;
+  font-weight: 700;
+}
+
+.cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media screen and (max-width: 996px) {
+  .hero {
+    padding-top: 3rem;
+  }
+
+  .shots {
+    gap: 0.75rem;
+    padding: 2.5rem 1rem 0;
+    margin-top: 0;
+  }
+
+  .shot {
+    border-radius: var(--radius-sm);
+  }
+
+  .shotSide {
+    margin-bottom: -2rem;
+  }
+
+  .shotCenter {
+    margin-bottom: -1rem;
+  }
+
+  .section {
+    padding: 3rem 0;
+  }
+}

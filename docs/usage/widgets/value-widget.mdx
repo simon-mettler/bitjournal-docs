@@ -1,0 +1,34 @@
+---
+sidebar_position: 1
+---
+
+import Screenshot from '@site/src/components/Screenshot';
+
+# Value widget
+
+Shows a single number for one signal: for example the total coffees this week, or your average mood this month.
+
+<Screenshot
+  light="/img/widgets/widget_value_light.png"
+  dark="/img/widgets/widget_value_dark.png"
+  alt="A value widget"
+  height={200}
+/>
+
+## Settings
+
+| Setting | Description |
+| --- | --- |
+| **Widget type** | Value|
+| **Signal** | The signal the number is calculated from. |
+| **Title** | The heading shown on the widget. |
+| **Display** | *Total* adds up the entries in the period. *Average* shows their average. |
+| **Timeframe** | The period the number covers. |
+
+## Usage
+
+Use a value widget for a quick glance at something you want to keep an eye on: a daily count, a weekly total, a monthly average.
+
+*Total* suits things you count or accumulate (tallies, durations). *Average* suits things you rate or measure (range and value signals such as mood or weight).
+
+See [Statistics in detail](../statistics.md#total-and-average) for how the total and the average are calculated, and [number formatting](../statistics.md#number-formatting) for how the number is shown.

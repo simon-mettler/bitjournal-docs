@@ -1,0 +1,66 @@
+.plans {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  max-width: 44rem;
+  margin: 2rem auto;
+}
+
+.plan {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 2rem;
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
+
+.featured {
+  box-shadow: var(--shadow-interact);
+  outline: 2px solid var(--color-primary);
+}
+
+.name {
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.price {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.price small {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--color-text-light);
+}
+
+.note {
+  color: var(--color-text-light);
+  margin-bottom: 1rem;
+}
+
+/* Push the button to the bottom of the card */
+.plan > button,
+.plan > a {
+  margin-top: auto;
+}
+
+.selfhost {
+  text-align: center;
+  color: var(--color-text-light);
+}
+
+@media screen and (max-width: 996px) {
+  .plans {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Disabled "Coming soon" buttons: keep them readable */
+.soon:disabled {
+  opacity: 0.8;
+}

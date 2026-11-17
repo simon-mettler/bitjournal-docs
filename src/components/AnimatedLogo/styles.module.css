@@ -1,0 +1,48 @@
+.logo {
+  --logo-idle: 0.08;
+
+  display: block;
+  height: 2rem;
+  width: auto;
+  overflow: visible;
+  color: var(--color-primary);
+}
+
+:global([data-theme='dark']) .logo {
+  --logo-idle: 0.13;
+}
+
+.cell {
+  fill: currentcolor;
+  opacity: var(--logo-idle);
+  animation: pulse var(--t) ease-in-out var(--d) forwards;
+}
+
+.word {
+  fill: currentcolor;
+  font-family: 'Figtree Variable', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 600;
+  font-size: 296px;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: var(--logo-idle);
+  }
+  33% {
+    opacity: 1;
+  }
+  66% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: var(--o);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cell {
+    animation: none;
+    opacity: var(--o);
+  }
+}

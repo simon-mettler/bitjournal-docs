@@ -1,0 +1,16 @@
+services:
+  web:
+    build: .
+    container_name: bitjournal-web
+    restart: unless-stopped
+    networks:
+      - npm-nw
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+networks:
+  npm-nw:
+    external: true

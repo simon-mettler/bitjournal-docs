@@ -1,0 +1,34 @@
+---
+sidebar_position: 2
+---
+
+import Screenshot from '@site/src/components/Screenshot';
+
+# Timeseries widget
+
+Shows how one signal develops across a period as a bar or line chart.
+
+<Screenshot
+  light="/img/widgets/widget_timeseries_light.png"
+  dark="/img/widgets/widget_timeseries_dark.png"
+  alt="A timeseries widget"
+/>
+
+## Settings
+
+| Setting | Description |
+| --- | --- |
+| **Widget type** | Timeseries |
+| **Signal** | The signal that is charted. |
+| **Title** | The heading shown on the widget. |
+| **Chart type** | *Bar* or *Line*. |
+| **Average line** | *Show* or *Hide* a dashed line with the moving average of the chart. |
+| **Timeframe** | The period the chart covers. |
+
+## Usage
+
+Use a timeseries widget to see trends and spot patterns: is your mood getting better, do you drink more coffee on some weeks?
+
+*Bar* charts read well for totals such as counts per day. *Line* charts suit averages and measurements such as mood or weight. Turn on the average line to compare single days or weeks against your usual level.
+
+ See [Statistics in detail](../statistics.md#total-and-average) for how each step of the chart is combined according to the signal's [summary method](../signals.md#summary-method), [how the period is split into steps](../statistics.md#steps-of-a-timeseries) and [how the average line is calculated](../statistics.md#average-line).

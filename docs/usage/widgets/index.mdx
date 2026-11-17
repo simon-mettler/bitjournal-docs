@@ -1,0 +1,31 @@
+---
+sidebar_position: 0
+---
+
+import {WidgetCards, WidgetCard} from '@site/src/components/WidgetCards';
+
+# Widgets
+
+Widgets are the building blocks of your [dashboard](../dashboard.md). Each one turns the data of a signal into something you can read at a glance.
+
+<WidgetCards>
+  <WidgetCard
+    to="/docs/usage/widgets/value-widget"
+    title="Value widget"
+    description="A single number for one signal, such as the total coffees this week."
+    light="/img/widgets/widget_value_light.png"
+    dark="/img/widgets/widget_value_dark.png"
+  />
+  <WidgetCard
+    to="/docs/usage/widgets/timeseries-widget"
+    title="Timeseries widget"
+    description="A bar or line chart showing how a signal develops over a period."
+    light="/img/widgets/widget_timeseries_light.png"
+    dark="/img/widgets/widget_timeseries_dark.png"
+  />
+</WidgetCards>
+
+:::info
+**More widgets and additional options are coming soon!**
+They will make analysing your data far more interesting and functional.
+:::
