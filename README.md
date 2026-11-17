@@ -1,43 +1,30 @@
-# Website
+# bitjournal-web
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+Website and documentation for [bitjournal](https://github.com/simon-mettler/bitjournal), live at [bitjournal.me](https://bitjournal.me). Built with [Docusaurus](https://docusaurus.io).
 
-## Installation
+- `docs/usage/`: how to use the app
+- `docs/selfhost/`: how to self-host it
+- `src/pages/`: landing, pricing and legal pages
 
-```bash
-npm install
-```
+## Contributing
 
-**Note**: feel free to use the package manager of your choice.
+Contributions to the docs are welcome: typo fixes, corrections, clearer wording, and missing or improved guides. Open a pull request, or an issue if you are unsure. For larger additions, open an issue first. Please keep docs accurate to the [bitjournal](https://github.com/simon-mettler/bitjournal) source.
 
-## Local Development
-
-```bash
-npm run start
-```
-
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
-
-## Build
+## Development
 
 ```bash
-npm run build
+npm ci
+npm start            # dev server with live reload
+npm run typecheck    # type-check
+npm run build        # production build into build/
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+The build fails on broken links.
 
 ## Deployment
 
-Using SSH:
+The site is built and served by nginx in Docker.
 
 ```bash
-USE_SSH=true npm run deploy
+docker compose up -d --build
 ```
-
-Not using SSH:
-
-```bash
-GIT_USER=<Your GitHub username> npm run deploy
-```
-
-If you are using GitHub Pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
