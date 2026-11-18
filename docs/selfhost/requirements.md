@@ -17,7 +17,7 @@ sidebar_position: 2
 
 ## Optional
 
-- For emails: a [Resend](https://resend.com) account and a verified sending domain, if you want password-reset and notification emails.
+- For emails: access to an SMTP server (from a provider such as Resend, Postmark or Amazon SES, or your own) and a sender address it accepts, if you want password-reset and notification emails.
 
   :::note
   For selfhosters, bitjournal works fine without email, see [Users and registration](./users.md#email).

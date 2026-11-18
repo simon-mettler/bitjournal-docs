@@ -43,14 +43,21 @@ docker compose up -d
 
 ## Email
 
-Emails are sent through [Resend](https://resend.com). Email is enabled only when **all three** of `RESEND_API_KEY`, `DEFAULT_FROM_EMAIL` and `SITE_URL` are set.
+Emails are sent over SMTP. Email is enabled only when **all three** of `EMAIL_HOST`, `DEFAULT_FROM_EMAIL` and `SITE_URL` are set.
 
-| Variable             | Default | Description                                                                                        |
-| -------------------- | ------- | -------------------------------------------------------------------------------------------------- |
-| `RESEND_API_KEY`     | empty   | Your Resend API key.                                                                               |
-| `DEFAULT_FROM_EMAIL` | empty   | Sender address. Must be on a domain you verified in Resend.                                        |
-| `SITE_URL`           | empty   | Public URL of your instance, e.g. `https://bitjournal.example.com`. Used to build links in emails. |
-| `EMAIL_CATCH_ALL`    | empty   | Development only: send every email to this address instead of the real recipient. Leave empty.     |
+| Variable              | Default | Description                                                                                            |
+| --------------------- | ------- | ------------------------------------------------------------------------------------------------------ |
+| `EMAIL_HOST`          | empty   | Hostname of your SMTP server, e.g. `smtp.resend.com`.                                                  |
+| `EMAIL_PORT`          | `587`   | SMTP port. Use `587` with STARTTLS (default) or `465` together with `EMAIL_USE_SSL=true`.              |
+| `EMAIL_HOST_USER`     | empty   | SMTP username. Leave empty if your server needs no login.                                              |
+| `EMAIL_HOST_PASSWORD` | empty   | SMTP password.                                                                                         |
+| `EMAIL_USE_TLS`       | `true`  | Upgrade the connection with STARTTLS. Normally used with port `587`.                                   |
+| `EMAIL_USE_SSL`       | `false` | Use implicit TLS from the start. Normally used with port `465`. Takes precedence over `EMAIL_USE_TLS`. |
+| `DEFAULT_FROM_EMAIL`  | empty   | Sender address. Your provider must allow it, usually an address on a domain you verified there.        |
+| `SITE_URL`            | empty   | Public URL of your instance, e.g. `https://bitjournal.example.com`. Used to build links in emails.     |
+| `EMAIL_CATCH_ALL`     | empty   | Development only: send every email to this address instead of the real recipient. Leave empty.         |
+
+Send a test mail with `docker compose exec app python manage.py sendtestmail you@example.com`.
 
 ## Docker
 

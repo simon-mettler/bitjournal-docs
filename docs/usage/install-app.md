@@ -36,7 +36,7 @@ Menu names vary a little between browsers and versions. If you can't find the op
 
 ## Updating and uninstalling
 
-When a new version is available, the app shows an **Update available** message with a **Reload** button. Tap **Reload** to load the new version right away. The app checks for new versions when you open it and regularly while it is running. To remove it, uninstall it like any other app on your device. This only removes the app, not your account or data.
+The app updates itself. It checks for a new version and installs it automatically at a safe moment. To check manually, open **App** settings and tap **Check for updates**. To remove it, uninstall it like any other app on your device. This only removes the app, not your account or data.
 
 :::info
 **For self-hosters:**

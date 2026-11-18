@@ -40,7 +40,7 @@ Registration is closed (`REGISTRATION_ENABLED=false`). See [Users and registrati
 
 ## No password reset email arrives
 
-Email is only active when `RESEND_API_KEY`, `DEFAULT_FROM_EMAIL` and `SITE_URL` are all set, and the sender domain is verified in Resend. Try `docker compose exec app python manage.py sendtestmail you@example.com` and read the output and logs.
+Email is only active when `EMAIL_HOST`, `DEFAULT_FROM_EMAIL` and `SITE_URL` are all set. Check that the port matches the encryption (`587` with `EMAIL_USE_TLS=true`, or `465` with `EMAIL_USE_SSL=true`), that the SMTP credentials are right, and that your provider allows the sender address (e.g. a verified domain). Try `docker compose exec app python manage.py sendtestmail you@example.com` and read the output and logs.
 
 ## My data is gone after recreating containers
 
