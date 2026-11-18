@@ -96,6 +96,9 @@ const config: Config = {
           title: 'Legal',
           items: [
             {label: 'Legal notice', to: '/imprint'},
+            {label: 'Terms of service', to: '/terms'},
+            {label: 'Privacy policy', to: '/privacy'},
+            {label: 'Refund policy', to: '/refunds'},
           ],
         },
       ],
